@@ -1,4 +1,5 @@
-import Eye from "./eye";
+import eye_on from "./Images/eye.png";
+import eye_off from "./Images/eye_off.png";
 import "./Input.css";
 
 function Input(props) {
@@ -12,8 +13,15 @@ function Input(props) {
   function eyeClick() {
     if (type == "password" || type == "Password") {
       const inpt = document.getElementById("Inpt");
-      console.log(inpt);
+      const img = document.getElementById("image");
+      img.setAttribute("src", eye_off);
+      inpt.setAttribute("type", "text");
+      type = "text";
     } else {
+      const int = document.getElementById("Inpt");
+      const ig = document.getElementById("image");
+      ig.setAttribute("src", eye_on);
+      int.setAttribute("type", "password");
       type = "password";
     }
   }
@@ -22,7 +30,9 @@ function Input(props) {
     <div className="input">
       <name>{type} : </name>
       <input id="Inpt" type={type} />
-      <Eye dis={isPassword} func={eyeClick()} />
+      <button onClick={eyeClick} style={{ display: isPassword }}>
+        <img id="image" src={eye_on} width="15" />
+      </button>
     </div>
   );
 }
