@@ -1,10 +1,10 @@
 import eye_on from "./Images/eye.png";
 
-function Eye() {
+function Eye(props) {
   return (
     <div>
-      <button>
-        <img src={eye_on} width="15" />
+      <button onClick={props.func}>
+        <img src={eye_on} width="15" style={{ display: props.dis }} />
       </button>
     </div>
   );
