@@ -1,8 +1,10 @@
 function Header() {
-  return <div>
-    <p>Login Form</p>
-    <p></p>
-  </div>;
+  return (
+    <div>
+      <p>Login</p>
+      <p>Please enter your credentials</p>
+    </div>
+  );
 }
 
 export default Header;
