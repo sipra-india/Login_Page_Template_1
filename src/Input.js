@@ -3,6 +3,8 @@ import eye_off from "./Images/eye_off.png";
 import React, { useState } from "react";
 import "./Input.css";
 
+export const valu = val;
+
 function Input(props) {
   let isPassword = "none";
   let type = props.type;

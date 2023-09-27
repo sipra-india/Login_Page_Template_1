@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import Input from "./Input";
 import Header from "./header";
 import Footer from "./footer";
+import { valu } from "./Input";
 
 export default function App() {
-  
-
   return (
     <div>
       <Header />
