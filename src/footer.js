@@ -1,5 +1,9 @@
 function Footer() {
-  return <div></div>;
+  return (
+    <div>
+      <p>Don't have an account? SIgn up</p>
+    </div>
+  );
 }
 
 export default Footer;

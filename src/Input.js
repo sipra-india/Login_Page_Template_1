@@ -1,10 +1,12 @@
 import eye_on from "./Images/eye.png";
 import eye_off from "./Images/eye_off.png";
+import React, { useState } from "react";
 import "./Input.css";
 
 function Input(props) {
   let isPassword = "none";
   let type = props.type;
+  const [val, SetVal] = useState("");
 
   if (props.type == "Password" || props.type == "password") {
     isPassword = "block";
@@ -26,10 +28,20 @@ function Input(props) {
     }
   }
 
+  function handleChange(e) {
+    SetVal(e.target.value);
+  }
+
   return (
     <div className="input">
       <name>{type} : </name>
-      <input id="Inpt" type={type} />
+      <input
+        required
+        id="Inpt"
+        type={type}
+        value={val}
+        onChange={handleChange}
+      />
       <button onClick={eyeClick} style={{ display: isPassword }}>
         <img id="image" src={eye_on} width="15" />
       </button>
